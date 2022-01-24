@@ -1,4 +1,4 @@
-package InsertionSort;
+package _3InsertionSort;
 
 import java.util.Arrays;
 
@@ -19,7 +19,6 @@ public class InsertionSort {
 				}else {
 					input[pointer]=input[pointer-1];
 					input[pointer-1]=temp;
-					System.out.println(Arrays.toString(input));
 				}
 			}
 		}
