@@ -48,6 +48,8 @@ public class RadixSort {
 			//means that one is taken from the count tally at the position of the digit value. The remainder
 			//is subtracted from the insert position index to preserve the stability of the algroithm.
 			temp[--counter[getDigit(input[tempIndex],position,10)]]= input[tempIndex];
+			System.out.println(Arrays.toString(temp));
+			System.out.println("tempIndex"+tempIndex+" Counter"+);
 		}
 		for(int i =0;i<input.length;i++) {//writes back to main array
 			input[i]=temp[i];
