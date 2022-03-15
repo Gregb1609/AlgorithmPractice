@@ -66,6 +66,33 @@ public class DoubleLinked {
 		return removedNode.getEmployee();
 	}
 	
+	public boolean addBefore(Employee toEnter, Employee existing) {
+		//returns true if the employee is added and false if the employee existing is not found
+		DoubleNode current = head;
+		if(current==null) {
+			return false;
+		}
+		
+		while(current.getEmployee()!=existing&&current.getNext()!=null) {
+			current=current.getNext();
+		}
+		if(current.getEmployee()==existing) {
+			DoubleNode entry = new DoubleNode(toEnter);
+			entry.setNext(current);
+			entry.setLast(current.getLast());
+			current.setLast(entry);
+			if(current==head) {
+				head=entry;
+			}else {
+				entry.getLast().setNext(entry);
+			}
+			return true;
+		}else {
+			System.out.println("Employee not found");
+			return false;
+		}
+	}
+	
 	public boolean isEmpty() {
 		return (this.length==0)?true: false;
 	}
